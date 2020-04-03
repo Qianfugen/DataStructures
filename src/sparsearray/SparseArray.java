@@ -1,4 +1,4 @@
-package day1;
+package sparsearray;
 
 import java.io.*;
 
