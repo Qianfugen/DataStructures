@@ -2,7 +2,7 @@ package linkedlist;
 
 import java.util.Stack;
 
-public class SingleLinekdListDemo {
+public class SingleLinkedListDemo {
     public static void main(String[] args) {
         HeroNode hero1 = new HeroNode(1, "刘备", "老大");
         HeroNode hero2 = new HeroNode(2, "关羽", "老二");
@@ -290,6 +290,8 @@ class SingleLinkedList {
 
     }
 
+    public void showHero() {
+    }
 }
 
 
