@@ -14,12 +14,20 @@ public class BinarySearch {
 //        System.out.println("resIndex = " + resIndex);
 
         //返回集合
-        int[] arr = {1, 8, 10, 89, 1000, 1000, 1000, 1234};
-        List<Integer> resIndex = binarySearch2(arr, 0, arr.length, 1000);
+//        int[] arr = {1, 8, 10, 89, 1000, 1000, 1000, 1234};
+//        List<Integer> resIndex = binarySearch2(arr, 0, arr.length, 1000);
+//        System.out.println("resIndex = " + resIndex);
+
+        int[] arr = new int[100];
+        for (int i = 0; i < 100; i++) {
+            arr[i] = i + 1;
+        }
+        int resIndex = binarySearch(arr, 0, arr.length - 1, 78);
         System.out.println("resIndex = " + resIndex);
     }
 
     public static int binarySearch(int[] arr, int left, int right, int findVal) {
+        System.out.println("查找次数~~");
         //如果left>right,说明已经遍历完毕,没有找到
         if (left > right) {
             return -1;
@@ -43,6 +51,7 @@ public class BinarySearch {
     }
 
     public static List<Integer> binarySearch2(int[] arr, int left, int right, int findVal) {
+        System.out.println("查找次数~~");
         //用来接收结果集
         List<Integer> list = null;
         //如果left>right,说明已经遍历完毕,没有找到
