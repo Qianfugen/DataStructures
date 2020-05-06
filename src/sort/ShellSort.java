@@ -10,7 +10,8 @@ import java.util.Date;
 public class ShellSort {
     public static void main(String[] args) {
 //        int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-//        shellSort(arr);
+//        shellSort2(arr);
+//        System.out.println(Arrays.toString(arr));
 
         //测试80000数据
         int[] arr = new int[80000];
@@ -25,13 +26,14 @@ public class ShellSort {
         System.out.println("排序前时间: " + date1Str);
 
         //开始排序
-        shellSort(arr);
+        shellSort2(arr);
 
         Date date2 = new Date();
         String date2Str = sdf.format(date2);
         System.out.println("排序后时间: " + date2Str);
     }
 
+    //交换法
     public static void shellSort(int[] arr) {
         int temp = 0;
         int count = 0;
@@ -46,6 +48,23 @@ public class ShellSort {
                 }
             }
 //            System.out.printf("希尔排序第%d趟: %s\n", ++count, Arrays.toString(arr));
+        }
+    }
+
+    //移位法
+    public static void shellSort2(int[] arr) {
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+            for (int i = gap; i < arr.length; i++) {
+                int j = i;
+                int temp = arr[j];
+                while (j - gap >= 0 && temp < arr[j - gap]) {
+                    //移位
+                    arr[j] = arr[j - gap];
+                    j -= gap;
+                }
+                //当退出while,就给temp找到插入的位置
+                arr[j] = temp;
+            }
         }
     }
 
